@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Add Student</title>
+</head>
+<body>
+
+	<h1>Add New Student</h1>
+
+	<form action="SaveStudentServlet" method="post">
+
+		<table>
+
+			<tr>
+				<td>Name :</td>
+				<td><input type="text" name="name"
+					placeholder="Enter your name" /></td>
+			</tr>
+
+			<tr>
+				<td>Email id :</td>
+				<td><input type="email" name="email"
+					placeholder="Enter your email" /></td>
+			</tr>
+
+			<tr>
+				<td>Mobile Number :</td>
+				<td><input type="number" name="Mobile_Number"
+					placeholder="Enter your mobile number" /></td>
+			</tr>
+
+			<tr>
+				<td>Address :</td>
+				<td><input type="text" name="address"
+					placeholder="Enter your address" /></td>
+			</tr>
+
+			<tr>
+				<td colspan="2"><input type="submit" value="Save Student" /></td>
+			</tr>
+		</table>
+
+	</form>
+
+	<br />
+	<a href="ViewStudentServlet">view Student</a>
+
+</body>
+</html>
