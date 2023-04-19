@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration page</title>
+
+<link rel="stylesheet" href="register.css">
+
+<script>
+//Select all input elements for varification
+const firstName = document.getElementById("fname");
+const lastName = document.getElementById("lname");
+const email = document.getElementById("email");
+const phoneNumber = document.getElementById("mobNumber");
+const password1 = document.getElementById("pass1");
+
+const gender = document.registration;
+
+
+// function for form varification
+function formValidation() {
+    // checking length of firstname
+    if (fname == null || fname == "" ) {
+       alert("First Name can not be blanck.");
+       fname.focus();
+       return false;
+    }
+    
+    else if(fname.value.length < 2 || fname.value.length > 20){
+    alert("First Name length should be more than 2 and less than 21 charaters");
+        fname.focus();
+       return false;
+    }
+ 
+    // checking length of lastname
+    if (lname == null || lname == "") {
+        alert("Last Name can not be blanck.");
+        lname.focus();
+        return false;
+    }
+    else if(lname.value.length < 2 || lname.value.length > 20){
+        alert("First Name length should be more than 2 and less than 21 charaters");
+        lname.focus();
+        return false;
+    }
+
+    // checking email format
+    if (email.value.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)) {
+        alert("Please enter a valid email!");
+        email.focus();
+        return false;
+    } 
+
+    // checking phone number
+    if (!mobNumber.value.match(/^[1-9][0-9]{9}$/)) {
+        alert("Phone number must be 10 characters long number and first digit can't be 0!");
+        mobNumber.focus();
+        return false;
+    }
+     // checking password character pattern
+     if (pass1.value.match(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/)) {
+        alert("Password must contain at least one lowercase letter, one uppercase letter, one numeric digit, and one special character, and must be between 8 and 15 characters long.");
+        pass1.focus();
+        return false;
+    }
+
+    // checking gender
+    if (gender.gender.value === "") {
+       alert("Please select your gender ");
+       return false;
+    }
+
+ return true;
+}
+</script>
+</head>
+<body>
+	<div class="container">
+		<div class="title">Registration form</div>
+		<div class="content">
+			<form name="registartion" action="welcome.html"
+				class="registartion-form" onsubmit=" returnformValidation()">
+				<div class="user-details">
+					<div class="input-box">
+						<span class="details">First Name</span> <input type="text"
+							name="fname" id="fname" placeholder="Enter your first name">
+					</div>
+					<div class="input-box">
+						<span class="details">Last Name</span> <input type="text"
+							name="lname" id="lname" placeholder="Enter your last name">
+					</div>
+
+					<div class="input-box">
+						<span class="details">Email id </span> <input type="email"
+							name="email" id="email" placeholder="Enter your email id">
+					</div>
+					<div class="input-box">
+						<span class="details">Mobile Number</span> <input type="text"
+							name="mobileNumber" id="mobNumber"
+							placeholder="Enter your mobile number">
+					</div>
+					<div class="input-box">
+						<span class="details">Create Password</span> <input type="text"
+							name="password" id="pass" placeholder="Enter your password">
+					</div>
+					<div class="input-box">
+						<span class="details">Confirm Password</span> <input type="text"
+							placeholder="Confirm your password">
+					</div>
+				</div>
+
+				<div class="gender-details">
+					<input type="radio" name="gender" id="dot-1"> <input
+						type="radio" name="gender" id="dot-2"> <input type="radio"
+						name="gender" id="dot-3"> <span class="gender-title">Gender</span>
+					<div class="category">
+						<label for="dot-1"> <span class="dot one"></span> <span
+							class="gender">Male</span>
+						</label> <label for="dot-2"> <span class="dot two"></span> <span
+							class="gender">Female</span>
+						</label> <label for="dot-3"> <span class="dot three"></span> <span
+							class="gender">Other</span>
+						</label>
+					</div>
+				</div>
+				<div class="button">
+					<input type="submit" value="Register">
+				</div>
+			</form>
+		</div>
+	</div>
+
+</body>
+
+</html>
